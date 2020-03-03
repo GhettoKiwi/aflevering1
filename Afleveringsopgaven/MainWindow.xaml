@@ -1,0 +1,46 @@
+﻿<Window x:Class="Afleveringsopgaven.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Afleveringsopgaven"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Name="MainGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0" Grid.ColumnSpan="3" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <MenuItem Background="LightGray" Header="File" VerticalAlignment="Center" Height="25">
+                <MenuItem Header="Open" Click="MenuItem_Open"/>
+            </MenuItem>
+        </Menu>
+        <ListBox Name="UserList" Grid.Row="1" Grid.Column="0" Grid.RowSpan="4" SelectionChanged="PeopleList_SelectionChanged"/>
+        <Label Content="ID: " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" FontSize="24"/>
+        <Label Content="Name: " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" FontSize="24"/>
+        <Label Content="Age: " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1" FontSize="24"/>
+        <Label Content="Score: " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="1" FontSize="24"/>
+        <TextBox x:Name="idBox" IsReadOnly="True" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2" FontSize="24"/>
+        <TextBox x:Name="nameBox" IsReadOnly="True" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="2" FontSize="24"/>
+        <TextBox x:Name="ageBox" IsReadOnly="True" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="2" FontSize="24"/>
+        <TextBox x:Name="scoreBox" IsReadOnly="True" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="2" FontSize="24"/>
+        <StatusBar Grid.Row="5" Grid.ColumnSpan="3" Grid.Column="0">
+            <StatusBarItem HorizontalAlignment="Left">
+                <Label Name="ListCount"/>
+            </StatusBarItem>
+            <StatusBarItem HorizontalAlignment="Right">
+                <Label Name="LastUpdate"/>
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+</Window>
